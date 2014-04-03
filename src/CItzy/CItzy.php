@@ -5,7 +5,7 @@
 *
 * @package LydiaCore
 */
-class CLydia implements ISingleton {
+class CItzy implements ISingleton {
 
     private static $instance = null;
     public $data = null;
@@ -14,10 +14,10 @@ class CLydia implements ISingleton {
      * Constructor
      */
     protected function __construct() {
-        // include the site specific config.php and create a ref to $ly to be used by config.php
+        // include the site specific config.php and create a ref to $itzy to be used by config.php
 
-        $ly = &$this;
-        require(LYDIA_SITE_PATH.'/config.php');
+        $itzy = &$this;
+        require(ITZY_SITE_PATH.'/config.php');
     }
     /**
     * Singleton pattern. Get the instance of the latest created object or create a new one.
@@ -25,7 +25,7 @@ class CLydia implements ISingleton {
     */
     public static function Instance() {
         if(self::$instance == null) {
-            self::$instance = new CLydia();
+            self::$instance = new CItzy();
         }
         return self::$instance;
     }
@@ -92,20 +92,20 @@ class CLydia implements ISingleton {
         public function ThemeEngineRender() {
             // Get the paths and settings for the theme
             $themeName    = $this->config['theme']['name'];
-            $themePath    = LYDIA_INSTALL_PATH . "/theme/{$themeName}";
+            $themePath    = ITZY_INSTALL_PATH . "/theme/{$themeName}";
             $themeUrl	 = $this->request->base_url . "theme/{$themeName}";
 
-            // Add stylesheet path to the $ly->data array
+            // Add stylesheet path to the $itzy->data array
             $this->data['stylesheet'] = "{$themeUrl}/style.css";
 
             // Include the global functions.php and the functions.php that are part of the theme
-            $ly = &$this;
+            $itzy = &$this;
             $functionsPath = "{$themePath}/functions.php";
             if(is_file($functionsPath)) {
                 include_once($functionsPath);
             }
 
-            // Extract $ly->data to own variables and handover to the template file
+            // Extract $itzy->data to own variables and handover to the template file
             extract($this->data);
             include_once("{$themePath}/default.tpl.php");
 

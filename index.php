@@ -2,19 +2,19 @@
 //
 // PHASE: BOOTSTRAP
 //
-define('LYDIA_INSTALL_PATH', dirname(__FILE__));
-define('LYDIA_SITE_PATH', LYDIA_INSTALL_PATH . '/site');
+define('ITZY_INSTALL_PATH', dirname(__FILE__));
+define('ITZY_SITE_PATH', ITZY_INSTALL_PATH . '/site');
 
-require(LYDIA_INSTALL_PATH.'/src/CLydia/bootstrap.php');
+require(ITZY_INSTALL_PATH.'/src/CItzy/bootstrap.php');
 
-$ly = CLydia::Instance();
+$itzy = CItzy::Instance();
 
 //
 // PHASE: FRONTCONTROLLER ROUTE
 //
-$ly->FrontControllerRoute();
+$itzy->FrontControllerRoute();
 
 //
 // PHASE: THEME ENGINE RENDER
 //
-$ly->ThemeEngineRender();
+$itzy->ThemeEngineRender();
