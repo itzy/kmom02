@@ -20,6 +20,12 @@ $itzy->config['session_name'] = preg_replace('/[:\.\/-_]/', '', $_SERVER["SERVER
  */
 $itzy->config['base_url'] = null;
 
+// The contents of the kmoms navlinks
+$itzy->data['navkmom'] = array(
+    'kmom01'   => array('text'=>'kmom01',  'url'=>'/~jusi14/mvc/kmom01/index.php'),
+    'kmom02'   => array('text'=>'kmom02',  'url'=>'index/'),
+);
+
 /**
  * What type of urls should be used?
  *

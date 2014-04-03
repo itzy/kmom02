@@ -9,12 +9,24 @@
  * Create a url by prepending the base_url.
  */
 function base_url($url) {
-    return CLydia::Instance()->request->base_url . trim($url, '/');
+    return CItzy::Instance()->request->base_url . trim($url, '/');
 }
 
 /**
  * Helpers for the template file.
  */
+
+/**
+ * Create HTML for navigation links among kmoms.
+ */
+function getHTMLForKmomNavlinks($items, $id) {
+    foreach($items as $key => $item) {
+        @$html .= empty($item['url']) ? $item['text'] : "<a href='{$item['url']}'{$selected}>{$item['text']}</a>\n" ;
+    }
+    return "<nav id='$id'>\n{$html}</nav>\n";
+}
+
+
 $itzy->data['header'] = '<h1>Header: Itzy</h1>';
 $itzy->data['footer'] = <<<EOD
 <p>Footer: &copy; Itzy by Julia Sivartsson (julia.sivartsson@gmail.com)</p>

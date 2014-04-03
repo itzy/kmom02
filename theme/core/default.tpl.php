@@ -6,6 +6,9 @@
     <link rel="stylesheet" href="<?php echo $stylesheet; ?>">
 </head>
 <body>
+<header id="above">
+    <?php echo getHTMLForKmomNavlinks($navkmom, "nav-kmom")?>
+</header>
 <div id="header">
     <?php echo $header; ?>
 </div>
